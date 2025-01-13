@@ -1,6 +1,5 @@
 import os
 import subprocess
-import shutil
 
 def remove_hooks():
     # Get the root directory (where .git is)
