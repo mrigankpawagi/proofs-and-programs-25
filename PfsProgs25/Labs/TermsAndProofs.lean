@@ -1,1 +1,83 @@
-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
+/-!
+# Lab 01: Terms and Proofs
+
+In this lab, you will define a few terms and prove some simple theorems. The proofs should all be **term** proofs, i.e., without using tactics.
+
+To solve this lab, you should replace `sorry` with appropriate terms and proofs. The `sorry` command is a placeholder for code that has not been written yet. It is used as a temporary stub for an incomplete proof.
+
+Some tests are also included as code that is commented out. If your code is correct these should pass after uncommenting.
+
+## Some Terms
+
+Define an `Int` term eight that is equal to 8.
+-/
+def eight : sorry := sorry
+
+/-!
+**Test:** Uncomment the following lines to test your definition.
+-/
+-- /--
+-- error: type mismatch
+--   eight
+-- has type
+--   Int : Type
+-- but is expected to have type
+--   Nat : Type
+-- -/
+-- #guard_msgs in
+-- example : Nat := eight
+
+/-#
+## Simple functions
+
+Define two functions `f` and `g` that map a natural number `n` to `2 * n + 1`, using the argument and the λ syntax respectively.
+-/
+
+def f (n: Nat) : Nat := sorry
+
+def g : Nat → Nat := fun n ↦ sorry
+
+/-!
+**Test:** Uncomment the following lines to test your definition.
+-/
+-- example : f 3 = 7 := rfl
+-- example : g 3 = 7 := rfl
+
+/-!
+## Curried functions
+
+Rewrite the functions `h` and `composeSelf` which are in argument form to curried form as `h'` and `composeSelf'`.
+-/
+def h (m : Int) (n: Nat) : Int := m - n
+
+def h' : Int → Nat → Int := sorry
+
+def composeSelf (f : Nat → Nat) (n : Nat) : Nat := f (f n)
+
+def composeSelf' : (Nat → Nat) → (Nat → Nat) := sorry
+
+/-!
+**Test:** Uncomment the following lines to test your definition.
+-/
+-- example : h' 5 3 = 2 := rfl
+-- example : composeSelf' (fun n ↦ n + 1) 3 = 5 := rfl
+
+/-!
+## Term Proofs
+
+In the following, prove the result using only the theorems `Nat.le_refl` and `Nat.le_step` and without using tactics. In particular, do not use `Nat.succ_le_succ`.
+-/
+#check Nat.le_refl -- ∀ (n : ℕ), n ≤ n
+
+#check Nat.le_step -- ∀ (n m : ℕ), n ≤ m → n ≤ m + 1
+
+example : 3 ≤ 3 := sorry
+
+example : 3 ≤ 5 := sorry
+
+example (n: Nat) : n ≤ n + 2 := sorry
+
+-- change
+example : 3 ≤ 5 := sorry
+
+example (n: Nat) : n ≤ n + 2 := sorry

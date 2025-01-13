@@ -29,18 +29,46 @@ def encrypt_file(filepath, passphrase):
     with open(filepath, 'wb') as file:
         file.write(base64.b64encode(salt + encrypted_data))
 
+def is_base64(data):
+    try:
+        return base64.b64encode(base64.b64decode(data)) == data
+    except:
+        return False
+
 def decrypt_file(filepath, passphrase):
-    with open(filepath, 'rb') as file:
-        data = base64.b64decode(file.read())
-    salt, encrypted_data = data[:16], data[16:]
-    key = generate_key(passphrase, salt)
-    cipher = Cipher(algorithms.AES(key), modes.CBC(salt), backend=default_backend())
-    decryptor = cipher.decryptor()
-    padded_data = decryptor.update(encrypted_data) + decryptor.finalize()
-    unpadder = PKCS7(128).unpadder()
-    data = unpadder.update(padded_data) + unpadder.finalize()
-    with open(filepath, 'wb') as file:
-        file.write(data)
+    try:
+        with open(filepath, 'rb') as file:
+            data = file.read()
+        
+        # Check if file content is base64 encoded (likely encrypted)
+        if not is_base64(data):
+            print(f"Warning: {filepath} appears to not be encrypted, skipping...")
+            return
+        
+        data = base64.b64decode(data)
+        if len(data) < 16:  # Must have at least the salt
+            print(f"Warning: {filepath} is too short to be encrypted, skipping...")
+            return
+            
+        salt, encrypted_data = data[:16], data[16:]
+        key = generate_key(passphrase, salt)
+        cipher = Cipher(algorithms.AES(key), modes.CBC(salt), backend=default_backend())
+        decryptor = cipher.decryptor()
+        try:
+            padded_data = decryptor.update(encrypted_data) + decryptor.finalize()
+            unpadder = PKCS7(128).unpadder()
+            data = unpadder.update(padded_data) + unpadder.finalize()
+            with open(filepath, 'wb') as file:
+                file.write(data)
+        except ValueError as e:
+            print(f"Warning: Failed to decrypt {filepath} - file may not be encrypted or passphrase may be wrong")
+            return
+        except Exception as e:
+            print(f"Warning: Unexpected error decrypting {filepath}: {str(e)}")
+            return
+    except Exception as e:
+        print(f"Warning: Error processing {filepath}: {str(e)}")
+        return
 
 if __name__ == "__main__":
     import sys
