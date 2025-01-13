@@ -18,7 +18,8 @@ ASSIGNMENTS=$(python -c "import json; print(' '.join(json.load(open('.savemyass/
 NEEDS_ENCRYPTION=0
 for pattern in $ASSIGNMENTS; do
     for file in $(find . -path "./$pattern" -type f); do
-        if git diff --cached --name-only | grep -q "$file"; then
+        relative_path=${file#./}
+        if git diff --cached --name-only | grep -q "^${relative_path}$"; then
             NEEDS_ENCRYPTION=1
             break 2
         fi
@@ -37,7 +38,8 @@ if [ $NEEDS_ENCRYPTION -eq 1 ]; then
     # Encrypt staged assignment files
     for pattern in $ASSIGNMENTS; do
         for file in $(find . -path "./$pattern" -type f); do
-            if git diff --cached --name-only | grep -q "$file"; then
+            relative_path=${file#./}
+            if git diff --cached --name-only | grep -q "^${relative_path}$"; then
                 python .savemyass/_e.py encrypt "$file" "$PASSPHRASE"
                 git add "$file"
                 python .savemyass/_e.py decrypt "$file" "$PASSPHRASE"

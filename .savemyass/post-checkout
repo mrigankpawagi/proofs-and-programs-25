@@ -25,6 +25,7 @@ ASSIGNMENTS=$(python -c "import json; print(' '.join(json.load(open('.savemyass/
 # Decrypt each matching file
 for pattern in $ASSIGNMENTS; do
     for file in $(find . -path "./$pattern" -type f); do
+        relative_path=${file#./}
         python .savemyass/_e.py decrypt "$file" "$PASSPHRASE"
     done
 done
