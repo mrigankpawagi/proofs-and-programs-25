@@ -1,4 +1,3 @@
-import PfsProgs25.Labs.TermsAndProofs
 import PfsProgs25.Unit00.Egs
 import PfsProgs25.Unit01.SimpleTerms
 import PfsProgs25.Unit02.PropsProofs
