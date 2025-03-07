@@ -14,6 +14,7 @@ import PfsProgs25.Unit07.NatLogic
 import PfsProgs25.Unit08.RecFunction
 import PfsProgs25.Unit09.Trees
 import PfsProgs25.Unit10.BasePoint
+import PfsProgs25.Unit10.Half
 import PfsProgs25.Unit10.Listable
 import PfsProgs25.Unit10.Vec
 /-!

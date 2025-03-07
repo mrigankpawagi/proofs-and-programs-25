@@ -172,12 +172,14 @@ constructor:
 -/
 #print HAdd
 
+
 /--
 error: failed to synthesize
-  HAdd String Bool ?m.16704
+  HAdd String Bool ?_
 Additional diagnostic information may be available using the `set_option diagnostics true` command.
 -/
 #guard_msgs in
+set_option pp.mvars.anonymous false in
 #eval "Hello, " + true
 
 instance : HAdd String Bool String := ⟨fun s b =>
